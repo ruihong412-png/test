@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>炭路 TAN RD.｜炭火餐車</title>
+
+<style>
+
+/* =========================
+   基本設定
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        sans-serif;
+
+    background: #11100e;
+    color: #f3eee5;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+
+/* =========================
+   導覽列
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 6%;
+
+    background: rgba(15, 14, 12, 0.88);
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.logo span {
+    font-size: 11px;
+    display: block;
+    letter-spacing: 3px;
+    color: #a9a39a;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: #d8d1c5;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e87532;
+}
+
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 8% 80px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.88) 0%,
+            rgba(0,0,0,0.68) 45%,
+            rgba(0,0,0,0.35) 100%
+        ),
+
+        url("images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-small {
+    color: #e87532;
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 10vw, 130px);
+    line-height: 0.95;
+    letter-spacing: 8px;
+    font-weight: 900;
+}
+
+.hero h2 {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+.hero p {
+    margin-top: 25px;
+    color: #c4beb4;
+    max-width: 520px;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 13px 28px;
+
+    border: 1px solid #e87532;
+
+    color: #fff;
+
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #e87532;
+    color: #111;
+}
+
+
+/* =========================
+   Section
+========================= */
+
+section {
+    padding: 110px 8%;
+}
+
+.section-title {
+    margin-bottom: 55px;
+}
+
+.section-title span {
+    color: #e87532;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.section-title h2 {
+    margin-top: 10px;
+    font-size: 42px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   About
+========================= */
+
+.about {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.about-image {
+    min-height: 500px;
+
+    background:
+        url("images/about.jpg")
+        center / cover;
+}
+
+.about-text h3 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    color: #bcb6ac;
+    margin-bottom: 18px;
+}
+
+.quote {
+    margin-top: 35px;
+
+    padding-left: 20px;
+
+    border-left: 3px solid #e87532;
+
+    font-size: 20px;
+    color: #eee7dc;
+}
+
+
+/* =========================
+   Menu
+========================= */
+
+.menu-section {
+    background: #171512;
+}
+
+.menu-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.menu-card {
+
+    background: #211e1a;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    border-color: #e87532;
+}
+
+.menu-image {
+    height: 240px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.menu-content {
+    padding: 25px;
+}
+
+.menu-content h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.menu-content p {
+    color: #aaa39a;
+    font-size: 14px;
+}
+
+.price {
+    margin-top: 15px;
+
+    color: #e87532;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   炭火精神
+========================= */
+
+.fire {
+
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.7)
+        ),
+
+        url("images/fire.jpg")
+        center / cover;
+}
+
+.fire-content {
+    max-width: 650px;
+}
+
+.fire h2 {
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+.fire p {
+    margin-top: 25px;
+    color: #d0c9bf;
+}
+
+
+/* =========================
+   路線
+========================= */
+
+.route {
+    text-align: center;
+}
+
+.route-text {
+    max-width: 700px;
+    margin: auto;
+
+    color: #bdb6ac;
+}
+
+.route-line {
+
+    margin: 60px auto;
+
+    width: 80%;
+
+    height: 1px;
+
+    background: #514b43;
+
+    position: relative;
+}
+
+.route-point {
+
+    position: absolute;
+
+    top: -7px;
+
+    width: 14px;
+    height: 14px;
+
+    background: #e87532;
+
+    border-radius: 50%;
+}
+
+.point1 {
+    left: 0;
+}
+
+.point2 {
+    left: 50%;
+}
+
+.point3 {
+    right: 0;
+}
+
+
+/* =========================
+   IG / Social
+========================= */
+
+.social {
+
+    background: #0d0c0b;
+
+    text-align: center;
+}
+
+.social h2 {
+    font-size: 38px;
+}
+
+.social p {
+    margin-top: 10px;
+    color: #999188;
+}
+
+.social-btn {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 12px 30px;
+
+    border: 1px solid #555;
+
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    border-color: #e87532;
+    color: #e87532;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+
+    padding: 50px 8%;
+
+    background: #080807;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+.footer-text {
+    color: #777169;
+    font-size: 13px;
+}
+
+
+/* =========================
+   手機版
+========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        height: 60px;
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 120px 7% 80px;
+
+        background-position: 60% center;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .hero h2 {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 80px 7%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-image {
+        min-height: 350px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fire {
+        min-height: 500px;
+    }
+
+    .fire h2 {
+        font-size: 38px;
+    }
+
+    .route-line {
+        width: 90%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     導覽列
+========================= -->
+
+<nav>
+
+    <a href="#" class="logo">
+        炭路
+        <span>TAN RD.</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="#about">關於炭路</a>
+
+        <a href="#menu">炭火菜單</a>
+
+        <a href="#route">我們在哪</a>
+
+        <a href="#contact">聯絡我們</a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     首頁
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            TAN RD. / CHARCOAL FOOD TRUCK
+        </div>
+
+        <h1>
+            炭路
+        </h1>
+
+        <h2>
+            一台餐車，兩個年輕人，一爐炭火。
+        </h2>
+
+        <p>
+            路走到哪，火就生到哪。
+            <br>
+            沒有固定的目的地，只想把炭火的味道帶到更多地方。
+        </p>
+
+        <a href="#about" class="hero-btn">
+            認識炭路 →
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     關於炭路
+========================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <span>ABOUT TAN RD.</span>
+
+        <h2>我們為什麼上路</h2>
+
+    </div>
+
+
+    <div class="about">
+
+        <div class="about-image"></div>
+
+
+        <div class="about-text">
+
+            <h3>
+                炭路的開始，其實很簡單。
+            </h3>
+
+            <p>
+                不太想把生活困在同一個地方的兩個年輕人，
+                決定開著一台餐車上路。
+            </p>
+
+            <p>
+                沒有固定的目的地，
+                也不急著抵達哪裡。
+            </p>
+
+            <p>
+                只要找到一個適合生火的地方，
+                就停下來。
+            </p>
+
+            <p>
+                一爐炭火、一台餐車，
+                還有我們想分享給你的味道。
+            </p>
+
+            <div class="quote">
+                「路走到哪，火就生到哪。」
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     菜單
+========================= -->
+
+<section id="menu" class="menu-section">
+
+    <div class="section-title">
+
+        <span>CHARCOAL MENU</span>
+
+        <h2>炭火上見</h2>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+
+        <!-- 菜單 1 -->
+
+        <div class="menu-card">
+
+            <div
+                class="menu-image"
+                style="background-image:url('images/menu1.jpg')">
+            </div>
+
+            <div class="menu-content">
+
+                <h3>炭烤雞腿</h3>
+
+                <p>
+                    炭火慢烤，外焦內嫩，
+                    保留肉汁與炭香。
+                </p>
+
+                <div class="price">
+                    NT$ 150
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 菜單 2 -->
+
+        <div class="menu-card">
+
+            <div
+                class="menu-image"
+                style="background-image:url('images/menu2.jpg')">
+            </div>
+
+            <div class="menu-content">
+
+                <h3>炭烤牛肉串</h3>
+
+                <p>
+                    大火炭烤，
+                    搭配特製香料。
+                </p>
+
+                <div class="price">
+                    NT$ 180
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 菜單 3 -->
+
+        <div class="menu-card">
+
+            <div
+                class="menu-image"
+                style="background-image:url('images/menu3.jpg')">
+            </div>
+
+            <div class="menu-content">
+
+                <h3>炭烤蔬菜</h3>
+
+                <p>
+                    季節蔬菜直接上火，
+                    烤出自然甜味。
+                </p>
+
+                <div class="price">
+                    NT$ 100
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     炭火精神
+========================= -->
+
+<section class="fire">
+
+    <div class="fire-content">
+
+        <div class="section-title">
+
+            <span>THE FIRE</span>
+
+            <h2>
+                炭火不是配角。
+                <br>
+                它就是味道本身。
+            </h2>
+
+        </div>
+
+        <p>
+            火候、時間、距離。
+            <br><br>
+            每一次把食材放上烤網，
+            都是在和火溝通。
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     我們在哪
+========================= -->
+
+<section id="route" class="route">
+
+    <div class="section-title">
+
+        <span>ON THE ROAD</span>
+
+        <h2>我們在哪裡？</h2>
+
+    </div>
+
+    <div class="route-text">
+
+        <p>
+            炭路沒有固定店面。
+        </p>
+
+        <p>
+            我們會帶著餐車，
+            出現在不同的城市、活動與夜晚。
+        </p>
+
+        <p>
+            想知道下一站在哪？
+            跟著我們的 Instagram。
+        </p>
+
+    </div>
+
+
+    <div class="route-line">
+
+        <div class="route-point point1"></div>
+
+        <div class="route-point point2"></div>
+
+        <div class="route-point point3"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Instagram
+========================= -->
+
+<section id="contact" class="social">
+
+    <h2>
+        跟著炭路走
+    </h2>
+
+    <p>
+        下一站，也許就在你附近。
+    </p>
+
+    <a
+        href="https://instagram.com/"
+        target="_blank"
+        class="social-btn">
+
+        Instagram →
+
+    </a>
+
+</section>
+
+
+<!-- =========================
+     Footer
+========================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        炭路 TAN RD.
+    </div>
+
+    <div class="footer-text">
+        © 2026 TAN RD. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+</body>
+</html>
